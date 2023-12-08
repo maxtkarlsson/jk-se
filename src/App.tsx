@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { GetAllProducts } from "./services/productService";
+import { GetAllProducts } from "./services/ProductService";
 import { IProduct } from "./models/IProduct";
 
 function App() {
