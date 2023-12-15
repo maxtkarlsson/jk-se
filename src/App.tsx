@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { GetAllProducts } from "./services/ProductService";
 import { IProduct } from "./models/IProduct";
+import { ProductList } from "./components/ProductPage/ProductList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,7 +23,7 @@ function App() {
   return (
     <>
       <div>
-        <p>{products.toString()}</p>
+        <ProductList productList={products} />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
