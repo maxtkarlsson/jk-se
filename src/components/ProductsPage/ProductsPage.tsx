@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
 import { ProductList } from "./ProductList";
-import { IProduct } from "../../models/IProduct";
-import { GetAllProducts } from "../../services/ProductService";
+import { useFetchProductsQuery } from "./products-api-slice";
 
 export const ProductsPage = () => {
-  const [products, setProducts] = useState<IProduct[]>([]);
+  const { data = [], isFetching } = useFetchProductsQuery();
 
-  const getProducts = async () => {
-    const products = await GetAllProducts();
-    setProducts(products);
-    console.log(products);
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  return <ProductList productList={products} />;
+  return (
+    <>
+      <div>Number of products fetched: {data.length}</div>
+      <ProductList productList={data} />
+    </>
+  );
 };
