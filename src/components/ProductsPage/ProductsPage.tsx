@@ -7,6 +7,7 @@ export const ProductsPage = () => {
   return (
     <>
       <div>Number of products fetched: {data.length}</div>
+      <div>isFetching: {isFetching}</div>
       <ProductList productList={data} />
     </>
   );
