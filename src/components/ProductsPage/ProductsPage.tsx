@@ -44,7 +44,9 @@ export const ProductsPage = () => {
           <option value="4">4</option>
         </select>
       </div>
-      <div>Number of products fetched: {data.products.length}</div>
+      {data.products.length && (
+        <div>Number of products fetched: {data.products.length}</div>
+      )}
       <div>isFetching: {JSON.stringify(isFetching)}</div>
       {status === "fulfilled" && <ProductList productList={data.products} />}
       <div></div>
