@@ -5,6 +5,21 @@ const BASE_URL =
   import.meta.env.VITE_REACT_LOCAL_API_URL ||
   "https://jk-se-backend.vercel.app/api/v1/";
 
+export interface IResponseObject {
+  products: IProduct[];
+  meta: {
+    total: number;
+    limit: number;
+    offset: number;
+    count: number;
+  };
+}
+
+export interface IProductsQuery {
+  limit: number;
+  offset: number;
+}
+
 export const productsApiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
@@ -12,9 +27,9 @@ export const productsApiSlice = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchProducts: builder.query<IProduct[], number | void>({
-        query(limit = 10) {
-          return `/products?limit=${limit}`;
+      fetchProducts: builder.query<IResponseObject, IProductsQuery>({
+        query: ({ limit = 0, offset = 0 }) => {
+          return `/products?offset=${offset}&limit=${limit}`;
         },
       }),
     };
