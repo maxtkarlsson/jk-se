@@ -14,7 +14,7 @@ export const ProductsPage = () => {
   const {
     data = { products: [], meta: {} },
     isFetching,
-    status,
+    //status,
   } = useFetchProductsQuery(query);
 
   return (
