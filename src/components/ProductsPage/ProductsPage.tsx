@@ -14,7 +14,7 @@ export const ProductsPage = () => {
   const {
     data = { products: [], meta: {} },
     isFetching,
-    //status,
+    status,
   } = useFetchProductsQuery(query);
 
   return (
@@ -25,6 +25,7 @@ export const ProductsPage = () => {
           value={limit}
           onChange={(e) => setLimit(Number(e.target.value))}
         >
+          <option value="0">0</option>
           <option value="1">1</option>
           <option value="5">5</option>
           <option value="10">10</option>
@@ -44,9 +45,9 @@ export const ProductsPage = () => {
           <option value="4">4</option>
         </select>
       </div>
-      {!isFetching && (
+      {status === "fulfilled" && (
         <div>
-          <div>Number of products fetched: {data.products?.length}</div>
+          <div>Number of products fetched: {data.products.length}</div>
           <div>isFetching: {JSON.stringify(isFetching)}</div>
           <ProductList productList={data.products} />
         </div>
