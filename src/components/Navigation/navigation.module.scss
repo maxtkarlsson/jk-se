@@ -1,0 +1,8 @@
+.NavLink {
+  text-decoration: none;
+  color: black;
+
+  &:global.active {
+    border: 1px solid deeppink;
+  }
+}
