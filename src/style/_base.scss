@@ -1,0 +1,133 @@
+/* This file contains the resets, variables, fonts and mixins  */
+
+/* Fonts */
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 100;
+  src: url("/src/assets/fonts/kumbhsans-thin-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-thin-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 200;
+  src: url("/src/assets/fonts/kumbhsans-extralight-webfont.woff2")
+      format("woff2"),
+    url("/src/assets/fonts/kumbhsans-extralight-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 300;
+  src: url("/src/assets/fonts/kumbhsans-light-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-light-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 400;
+  src: url("/src/assets/fonts/kumbhsans-regular-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 500;
+  src: url("/src/assets/fonts/kumbhsans-medium-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 600;
+  src: url("/src/assets/fonts/kumbhsans-semibold-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-semibold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 700;
+  src: url("/src/assets/fonts/kumbhsans-bold-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 800;
+  src: url("/src/assets/fonts/kumbhsans-extrabold-webfont.woff2")
+      format("woff2"),
+    url("/src/assets/fonts/kumbhsans-extrabold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-weight: 900;
+  src: url("/src/assets/fonts/kumbhsans-black-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/kumbhsans-black-webfont.woff") format("woff");
+}
+
+/* Variables */
+
+//Breakpoints
+$desktop: 768px;
+
+//Colors
+$gblack: #0a0908;
+$gblueblack: #22333b;
+$ggrey: #f2f4f3;
+$ggreen: #c2e812;
+
+/* Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Mixins */
+
+@mixin FlexColCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin FlexRowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mediaqueries mixins */
+
+@mixin for-size($size) {
+  @if $size == desktop {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+}
