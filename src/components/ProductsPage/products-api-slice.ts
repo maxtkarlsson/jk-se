@@ -32,8 +32,12 @@ export const productsApiSlice = createApi({
           return `/products?offset=${offset}&limit=${limit}`;
         },
       }),
+      fetchProductById: builder.query<IProduct, string | undefined>({
+        query: (id) => `/products/${id}`,
+      }),
     };
   },
 });
 
-export const { useFetchProductsQuery } = productsApiSlice;
+export const { useFetchProductsQuery, useFetchProductByIdQuery } =
+  productsApiSlice;

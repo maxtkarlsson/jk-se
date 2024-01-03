@@ -1,23 +1,29 @@
+import { Link } from "react-router-dom";
 import { IProduct } from "../../models/IProduct";
+import "./product-card.scss";
 
 interface ProductCardProps {
   product: IProduct;
 }
 
 export const ProductCard = ({ product }: ProductCardProps) => {
+  const id = product._id;
   const name = product.name;
-  const category = product.category;
-  const desc = product.description;
   const price = product.price;
-  const imgMedium = product.imageUrls.productImages.medium;
+
+  //const imgMedium = product.imageUrls.productImages.medium;
 
   return (
     <>
-      <p>{name}</p>
-      <p>{category}</p>
-      <p>{desc}</p>
-      <p>{price}</p>
-      <p>{imgMedium}</p>
+      <div className="product-card">
+        <img
+          src="/public/productImages/464x323.png"
+          className="product-card__img"
+        />
+        <span className="product-card__name">{name}</span>
+        <span className="product-card__price">{price} Sek</span>
+        <Link to={`/products/${id}`}>More Details</Link>
+      </div>
     </>
   );
 };
