@@ -1,3 +1,5 @@
+@use "../../style/base" as b;
+
 button {
   font-size: 14px;
   padding: 10px 20px 10px 20px;
@@ -7,26 +9,26 @@ button {
 }
 
 .button-primary {
-  background-color: #dbac34;
-  border: 1px solid #dbac34;
+  background-color: b.$jkGolden;
+  border: 1px solid b.$jkGolden;
   &:hover {
-    background-color: rgb(221, 137, 81);
+    background-color: b.$jkGolden-hover;
   }
 }
 
 .button-secondary {
   color: rgb(0, 0, 0);
-  background-color: white;
+  background-color: b.$jkWhite;
   border: 1px solid black;
   &:hover {
-    background-color: #f7f7f7;
+    background-color: b.$jkWhite-hover;
   }
 }
 
 .button-tertiary {
-  background-color: #afafaf;
-  border: 1px solid #afafaf;
+  background-color: b.$jkGrey;
+  border: 1px solid b.$jkGrey;
   &:hover {
-    background-color: rgb(110, 110, 110);
+    background-color: b.$jkGrey-hover;
   }
 }
