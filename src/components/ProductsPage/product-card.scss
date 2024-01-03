@@ -1,0 +1,14 @@
+@use "../../style/base" as b;
+
+.product-card {
+  outline: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 16px;
+  max-width: 464px;
+
+  &__price {
+    color: b.$jkGrey;
+  }
+}

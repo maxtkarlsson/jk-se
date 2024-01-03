@@ -1,0 +1,14 @@
+.products-page {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1920px;
+
+  &__list {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

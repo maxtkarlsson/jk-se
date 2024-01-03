@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProductList } from "./ProductList";
 import { useFetchProductsQuery, IProductsQuery } from "./products-api-slice";
+import "./products-page.scss";
 
 export const ProductsPage = () => {
   const [limit, setLimit] = useState(0);
@@ -46,11 +47,15 @@ export const ProductsPage = () => {
         </select>
       </div>
       {status === "fulfilled" && (
-        <div>
+        <>
           <div>Number of products fetched: {data.products.length}</div>
           <div>isFetching: {JSON.stringify(isFetching)}</div>
-          <ProductList productList={data.products} />
-        </div>
+          <div className="products-page">
+            <div className="products-page__list">
+              <ProductList productList={data.products} />
+            </div>
+          </div>
+        </>
       )}
     </>
   );
