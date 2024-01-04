@@ -5,6 +5,7 @@ import { addToWishlist } from "../WishList/Wishlist-slice";
 import { Button } from "../Common/Button";
 import { ButtonType } from "../../models/ButtonType";
 import { useAppDispatch } from "../../app/hooks";
+import { IProduct } from "../../models/IProduct";
 
 export const ProductDetailsPage = () => {
   const dispatch = useAppDispatch();
@@ -17,8 +18,8 @@ export const ProductDetailsPage = () => {
     //isLoading,
   } = useFetchProductByIdQuery(id) || {};
 
-  const handleClick = (id: string) => {
-    dispatch(addToWishlist(id));
+  const handleClick = (product: IProduct) => {
+    dispatch(addToWishlist(product));
   };
 
   return (
@@ -35,7 +36,7 @@ export const ProductDetailsPage = () => {
             text="Add to wishlist"
             btnType={ButtonType.SECONDARY}
             onClick={() => {
-              handleClick(product._id);
+              handleClick(product);
             }}
           ></Button>
         </div>

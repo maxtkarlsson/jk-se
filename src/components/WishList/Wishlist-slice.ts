@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IProduct } from "../../models/IProduct";
 
 interface WishlistState {
-  wishlistItems: string[];
+  wishlistItems: IProduct[];
   //wishlistTotalAmount: number;
 }
 
@@ -16,17 +17,17 @@ export const wishlistSlice = createSlice({
   name: "wishlists",
   initialState,
   reducers: {
-    addToWishlist: (state, action: PayloadAction<string>) => {
-      const productId = action.payload;
+    addToWishlist: (state, action: PayloadAction<IProduct>) => {
+      const productId = action.payload._id;
 
       const productIndex = state.wishlistItems.findIndex(
-        (id) => id === productId
+        (item) => item._id === productId
       );
 
       if (productIndex >= 0) {
         alert("This product already exist in yout wishlist.");
       } else {
-        state.wishlistItems.push(productId);
+        state.wishlistItems.push(action.payload);
 
         localStorage.setItem(
           "wishlistItems",
@@ -35,13 +36,13 @@ export const wishlistSlice = createSlice({
       }
     },
 
-    removeFromWishlist: (state, action: PayloadAction<string>) => {
+    removeFromWishlist: (state, action: PayloadAction<IProduct>) => {
       console.log("removeFromWishlist run with payload: ", action.payload);
 
-      const productId = action.payload;
+      const productId = action.payload._id;
 
       const productIndex = state.wishlistItems.findIndex(
-        (id) => id === productId
+        (item) => item._id === productId
       );
 
       if (productIndex < 0) {

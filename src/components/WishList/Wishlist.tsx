@@ -7,8 +7,8 @@ export const WishList = () => {
   return (
     <>
       <h1>Wishlist contains nr of prod: {wishlistItems.length}</h1>
-      {wishlistItems.map((itemId) => {
-        return <WishListItem id={itemId} key={itemId} />;
+      {wishlistItems.map((item) => {
+        return <WishListItem item={item} key={item._id} />;
       })}
     </>
   );
