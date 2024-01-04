@@ -34,11 +34,30 @@ export const wishlistSlice = createSlice({
         );
       }
     },
-    clearWishlist: (state) => {
-      state.wishlistItems = [];
-    },
+
     removeFromWishlist: (state, action: PayloadAction<string>) => {
       console.log("removeFromWishlist run with payload: ", action.payload);
+
+      const productId = action.payload;
+
+      const productIndex = state.wishlistItems.findIndex(
+        (id) => id === productId
+      );
+
+      if (productIndex < 0) {
+        alert("This product does not exist in your wishlist");
+      } else {
+        state.wishlistItems.splice(productIndex, 1);
+
+        localStorage.setItem(
+          "wishlistItems",
+          JSON.stringify(state.wishlistItems)
+        );
+      }
+    },
+
+    clearWishlist: (state) => {
+      state.wishlistItems = [];
     },
   },
 });
