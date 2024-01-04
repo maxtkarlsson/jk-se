@@ -1,8 +1,18 @@
+import { useParams } from "react-router";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useCreateRequestMutation } from "./requests-api-slice";
 import "./request-form.scss";
+import { useFetchProductByIdQuery } from "../ProductsPage/products-api-slice";
 
-export const ContactPageForm = () => {
+export const RequestForm = () => {
+  const { id } = useParams();
+
+  const {
+    data: product,
+    //isError,
+    //isLoading,
+  } = useFetchProductByIdQuery(id) || {};
+
   const [inputs, setInputs] = useState({
     email: "",
     phone: "",
@@ -23,13 +33,17 @@ export const ContactPageForm = () => {
 
     console.log(inputs);
 
-    createRequest({
-      type: inputs.requestType,
-      productId: "657c60157b3f6a4c9ddbae30",
-      email: inputs.email,
-      phoneNr: inputs.phone,
-      text: inputs.text,
-    });
+    if (!id) {
+      alert("Something went wrong");
+    } else {
+      createRequest({
+        type: inputs.requestType,
+        productId: id,
+        email: inputs.email,
+        phoneNr: inputs.phone,
+        text: inputs.text,
+      });
+    }
 
     setInputs({
       email: "",
@@ -41,6 +55,11 @@ export const ContactPageForm = () => {
   return (
     <>
       <form className="request-form" onSubmit={handleSubmit}>
+        <div>
+          <span>{product?._id}</span>
+          <span>{product?.name}</span>
+          <span>{product?.price}</span>
+        </div>
         <label>
           <input
             type="radio"

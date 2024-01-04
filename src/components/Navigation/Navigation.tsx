@@ -9,20 +9,25 @@ export const Navigation = () => {
           <NavLink className={`${classes.NavLink}`} to="/">
             Home
           </NavLink>
+        </li>
+        <li>
           <NavLink className={`${classes.NavLink}`} to="/products">
             Products
           </NavLink>
+        </li>
+        <li>
           <NavLink className={`${classes.NavLink}`} to="/news">
             News
           </NavLink>
+        </li>
+        <li>
           <NavLink className={`${classes.NavLink}`} to="/about">
             About me
           </NavLink>
+        </li>
+        <li>
           <NavLink className={`${classes.NavLink}`} to="/wishlist">
             Wishlist
-          </NavLink>
-          <NavLink className={`${classes.NavLink}`} to="/contact">
-            Contact
           </NavLink>
         </li>
       </ul>
