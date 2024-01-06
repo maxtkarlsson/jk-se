@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import { productsApiSlice } from "../components/ProductsPage/products-api-slice";
-import { requestsApiSlice } from "../components/ContactPage/requests-api-slice";
+import { requestsApiSlice } from "../components/RequestPage/requests-api-slice";
 
 import { wishlistSlice } from "../components/WishList/Wishlist-slice";
 

@@ -5,7 +5,7 @@ import { ProductsPage } from "./components/ProductsPage/ProductsPage";
 import { NewsPage } from "./components/NewsPage/NewsPage";
 import { ProductDetailsPage } from "./components/ProductDetailsPage/ProductDetailsPage";
 import { AboutPage } from "./components/AboutPage/AboutPage";
-import { RequestPage } from "./components/ContactPage/RequestPage";
+import { RequestPage } from "./components/RequestPage/RequestPage";
 import { WishList } from "./components/WishList/Wishlist";
 
 export const router = createBrowserRouter([
