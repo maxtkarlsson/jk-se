@@ -1,36 +1,41 @@
 import { NavLink } from "react-router-dom";
-import classes from "./navigation.module.scss";
+import "./navigation.scss";
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink className={`${classes.NavLink}`} to="/">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={`${classes.NavLink}`} to="/products">
-            Products
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={`${classes.NavLink}`} to="/news">
-            News
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={`${classes.NavLink}`} to="/about">
-            About me
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={`${classes.NavLink}`} to="/wishlist">
-            Wishlist
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <label className="hamburger">
+        <input type="checkbox" />
+      </label>
+      <nav className="navigation">
+        <ul className="navigation-list">
+          <li className="navigation-list__item">
+            <NavLink className="link" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li className="navigation-list__item">
+            <NavLink className="link" to="/products">
+              Products
+            </NavLink>
+          </li>
+          <li className="navigation-list__item">
+            <NavLink className="link" to="/news">
+              News
+            </NavLink>
+          </li>
+          <li className="navigation-list__item">
+            <NavLink className="link" to="/about">
+              About me
+            </NavLink>
+          </li>
+          <li className="navigation-list__item">
+            <NavLink className="link" to="/wishlist">
+              Wishlist
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };

@@ -1,0 +1,106 @@
+@use "../../style/base" as b;
+
+:root {
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #afafaf;
+  --background: white;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+
+  input {
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+    &:checked {
+      opacity: 0;
+      width: 0;
+    }
+  }
+}
+
+.hamburger:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger:has(input:focus-visible)::before,
+.hamburger:has(input:focus-visible)::after,
+.hamburger input:focus-visible {
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.navigation {
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 12rem;
+  padding: 10px 10px 15px 10px;
+  box-shadow: -5px 7px 6px -4px rgba(53, 53, 53, 0.75);
+  display: none;
+  margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 10px);
+
+  .navigation-list {
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid b.$jkGrey;
+
+    &__item {
+      border-top: 1px solid b.$jkGrey;
+      padding: 10px 0px 10px 0px;
+      text-align: right;
+      .link {
+        text-decoration: none;
+        color: b.$jkGrey;
+
+        &.active {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.hamburger:has(input:checked) + .navigation {
+  display: initial;
+}

@@ -1,6 +1,10 @@
 .header {
-  height: 40px;
-  background-color: aquamarine;
+  border: 1px solid blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .main {
