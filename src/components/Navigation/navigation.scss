@@ -24,6 +24,10 @@
   z-index: 2;
   cursor: pointer;
 
+  @media (min-width: 768px) {
+    display: none;
+  }
+
   input {
     appearance: none;
     outline: none;
@@ -78,6 +82,15 @@
   display: none;
   margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 10px);
 
+  @media (min-width: 768px) {
+    display: initial;
+    position: initial;
+    box-shadow: none;
+    //outline: 1px solid red;
+    width: max-content;
+    padding: 0px 14px 0px 14px;
+  }
+
   .navigation-list {
     list-style-type: none;
     font-weight: 700;
@@ -85,10 +98,26 @@
     line-height: 32px;
     border-bottom: 1px solid b.$jkGrey;
 
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      font-size: 20px;
+      line-height: 20px;
+      //outline: 1px solid blue;
+      padding: 0px 10px 0px 10px;
+    }
+
     &__item {
       border-top: 1px solid b.$jkGrey;
       padding: 10px 0px 10px 0px;
       text-align: right;
+
+      @media (min-width: 768px) {
+        border-top: none;
+        padding: 0px 0px 8px 0px;
+      }
+
       .link {
         text-decoration: none;
         color: b.$jkGrey;
