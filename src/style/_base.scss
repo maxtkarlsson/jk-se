@@ -69,7 +69,8 @@
 /* Variables */
 
 //Breakpoints
-$desktop: 768px;
+$medium: 768px;
+$large: 992px;
 
 //Colors
 $jkGolden: #dbac34;
@@ -125,8 +126,14 @@ video {
 /* Mediaqueries mixins */
 
 @mixin for-size($size) {
-  @if $size == desktop {
-    @media screen and (min-width: $desktop) {
+  @if $size == medium {
+    @media screen and (min-width: $medium) {
+      @content;
+    }
+  }
+
+  @if $size == large {
+    @media screen and (min-width: $large) {
       @content;
     }
   }

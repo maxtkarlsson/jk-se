@@ -23,8 +23,12 @@
   right: var(--hamburger-margin);
   z-index: 2;
   cursor: pointer;
-
+  /*
   @media (min-width: 768px) {
+    display: none;
+  }
+  */
+  @include b.for-size(medium) {
     display: none;
   }
 
@@ -81,8 +85,17 @@
   box-shadow: -5px 7px 6px -4px rgba(53, 53, 53, 0.75);
   display: none;
   margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 10px);
-
+  /*
   @media (min-width: 768px) {
+    display: initial;
+    position: initial;
+    box-shadow: none;
+    //outline: 1px solid red;
+    width: max-content;
+    padding: 0px 14px 0px 14px;
+  }
+*/
+  @include b.for-size(medium) {
     display: initial;
     position: initial;
     box-shadow: none;
@@ -97,8 +110,19 @@
     font-size: 32px;
     line-height: 32px;
     border-bottom: 1px solid b.$jkGrey;
-
+    /*
     @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      font-size: 20px;
+      line-height: 20px;
+      //outline: 1px solid blue;
+      padding: 0px 10px 0px 10px;
+    }
+    */
+
+    @include b.for-size(medium) {
       display: flex;
       flex-direction: row;
       gap: 30px;
@@ -112,8 +136,13 @@
       border-top: 1px solid b.$jkGrey;
       padding: 10px 0px 10px 0px;
       text-align: right;
-
+      /*
       @media (min-width: 768px) {
+        border-top: none;
+        padding: 0px 0px 8px 0px;
+      }
+      */
+      @include b.for-size(medium) {
         border-top: none;
         padding: 0px 0px 8px 0px;
       }
