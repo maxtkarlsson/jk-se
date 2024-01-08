@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./navigation.scss";
+import { WishlistCounter } from "../WishList/WishlistCounter";
 
 export const Navigation = () => {
   return (
@@ -33,6 +34,7 @@ export const Navigation = () => {
             <NavLink className="link" to="/wishlist">
               Wishlist
             </NavLink>
+            <WishlistCounter />
           </li>
         </ul>
       </nav>

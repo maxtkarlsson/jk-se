@@ -1,0 +1,8 @@
+.wishlist-counter {
+  margin-left: 4px;
+  &::before {
+    content: url("https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/logos/jk-se-heart-icon.svg");
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
