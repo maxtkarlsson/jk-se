@@ -8,7 +8,10 @@
   position: relative;
 
   .image-1 {
-    grid-area: 1 / 1 / 4 / 7;
+    grid-area: 1 / 1 / 4 / 13;
+    @include b.for-size(medium) {
+      grid-area: 1 / 1 / 4 / 7;
+    }
     display: flex;
     img {
       object-fit: cover;
@@ -16,23 +19,35 @@
   }
 
   .image-2 {
-    grid-area: 1 / 7 / 5 / 13;
-    display: flex;
+    display: none;
+    @include b.for-size(medium) {
+      grid-area: 1 / 7 / 5 / 13;
+      display: flex;
+    }
     img {
       object-fit: cover;
     }
   }
   .image-3 {
-    grid-area: 4 / 1 / 7 / 7;
-    display: flex;
+    display: none;
+    @include b.for-size(medium) {
+      grid-area: 4 / 1 / 7 / 7;
+      display: flex;
+    }
+
     img {
       object-fit: cover;
     }
   }
 
   .image-4 {
-    grid-area: 4 / 7 / 7 / 13;
+    grid-area: 4 / 1 / 7 / 13;
+    @include b.for-size(medium) {
+      grid-area: 4 / 7 / 7 / 13;
+    }
+
     display: flex;
+
     img {
       object-fit: cover;
     }
