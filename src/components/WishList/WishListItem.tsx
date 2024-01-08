@@ -4,6 +4,7 @@ import { removeFromWishlist } from "./Wishlist-slice";
 import { useAppDispatch } from "../../app/hooks";
 import { IProduct } from "../../models/IProduct";
 import { Link } from "react-router-dom";
+import "./wishlist-item.scss";
 
 interface IWishListItemProps {
   item: IProduct;
@@ -20,16 +21,21 @@ export const WishListItem = ({ item }: IWishListItemProps) => {
 
   return (
     <>
-      <div>
-        <div>
-          <p>image</p>
-          <span>{name}</span>
-          <span>{price} Sek</span>
-        </div>
-        <div>
-          <Link to={`/request/${_id}`}>More Details</Link>
-          <Button text="Order" btnType={ButtonType.PRIMARY}></Button>
-          <Button text="Contact me" btnType={ButtonType.SECONDARY}></Button>
+      <li className="wishlist-item">
+        <Link className="product-link" to={`/products/${_id}`}>
+          <div className="wishlist-item__content">
+            <div className="wishlist-item__img"></div>
+            <div className="wishlist-item__text">
+              <h2 className="wishlist-item__title">{name}</h2>
+              <p className="wishlist-item__price">{price} Sek</p>
+            </div>
+          </div>
+        </Link>
+
+        <div className="wishlist-item__buttons">
+          <Link to={`/request/${_id}`}>
+            <Button text="Send request" btnType={ButtonType.PRIMARY}></Button>
+          </Link>
           <Button
             text="Remove"
             btnType={ButtonType.TERTIARY}
@@ -38,7 +44,7 @@ export const WishListItem = ({ item }: IWishListItemProps) => {
             }}
           ></Button>
         </div>
-      </div>
+      </li>
     </>
   );
 };
