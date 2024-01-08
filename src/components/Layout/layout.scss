@@ -1,10 +1,26 @@
+@use "../../style/base" as b;
+
 .header {
   border: 1px solid blue;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  .header-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+
+    @include b.for-size(medium) {
+      align-self: center;
+      height: 100px;
+      width: 100px;
+    }
+  }
 }
 
 .main {

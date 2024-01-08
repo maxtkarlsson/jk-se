@@ -6,7 +6,13 @@ export const Layout = () => {
   return (
     <>
       <header className="header">
-        <p>LOGO</p>
+        <div className="header-logo">
+          <img
+            className="header-logo__text"
+            src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/logos/jk-se-logo-gold.svg"
+            alt=""
+          />
+        </div>
         <Navigation />
       </header>
       <main className="main">
