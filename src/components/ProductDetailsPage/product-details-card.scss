@@ -1,0 +1,47 @@
+@use "../../style/base" as b;
+
+.product-details-card {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    @include b.for-size(medium) {
+      width: 50%;
+      align-self: flex-start;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    margin-bottom: 12px;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: b.$jkGrey;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
