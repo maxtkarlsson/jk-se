@@ -46,6 +46,7 @@ export const ProductsPage = () => {
           <option value="4">4</option>
         </select>
       </div>
+      {status === "pending" && <p>LOADING</p>}
       {status === "fulfilled" && (
         <>
           <div>Number of products fetched: {data.products.length}</div>

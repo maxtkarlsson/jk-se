@@ -1,14 +1,13 @@
+@use "../../style/base" as b;
+
 .products-page {
-  background-color: cadetblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1920px;
+  width: 100%;
+  //max-width: 1920px;
 
   &__list {
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 464px));
+    gap: 12px;
+    justify-content: center;
   }
 }
