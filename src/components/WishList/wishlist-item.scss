@@ -27,9 +27,8 @@
   }
 
   &__img {
-    background-color: grey;
-    width: 80px;
-    height: 60px;
+    width: 100%;
+    object-fit: cover;
   }
 
   &__text {

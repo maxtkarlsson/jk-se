@@ -24,7 +24,10 @@ export const WishListItem = ({ item }: IWishListItemProps) => {
       <li className="wishlist-item">
         <Link className="product-link" to={`/products/${_id}`}>
           <div className="wishlist-item__content">
-            <div className="wishlist-item__img"></div>
+            <img
+              src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
+              alt=""
+            />
             <div className="wishlist-item__text">
               <h2 className="wishlist-item__title">{name}</h2>
               <p className="wishlist-item__price">{price} Sek</p>

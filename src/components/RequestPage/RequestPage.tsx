@@ -1,10 +1,12 @@
 import { RequestForm } from "./RequestForm";
+import "./request-page.scss";
 
 export const RequestPage = () => {
   return (
     <>
-      <h1>RequestPage</h1>
-      <RequestForm />
+      <div className="request-page">
+        <RequestForm />
+      </div>
     </>
   );
 };

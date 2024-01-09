@@ -5,14 +5,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 300px;
-
+  width: 100%;
+  max-width: 500px;
   gap: 18px;
 
   .product {
     font-weight: 600;
-    font-size: 12px;
-
     border-top: 1px solid b.$jkGrey;
     border-bottom: 1px solid b.$jkGrey;
     width: 100%;
@@ -29,9 +27,7 @@
     }
 
     &__image {
-      height: 34px;
-      width: 50px;
-      background-color: grey;
+      object-fit: cover;
     }
 
     &__name {

@@ -57,10 +57,13 @@ export const RequestForm = () => {
   return (
     <>
       <form className="request-form" onSubmit={handleSubmit}>
-        <span>{product?._id}</span>
         <div className="product">
           <div className="wrapper">
-            <div className="product__image">image</div>
+            <img
+              className="product__image"
+              src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
+              alt=""
+            />
             <span className="product__name">{product?.name}</span>
           </div>
           <span className="product__price">{product?.price} Sek</span>
