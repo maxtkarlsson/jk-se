@@ -20,7 +20,16 @@ export const Layout = () => {
       <main className="main">
         <Outlet></Outlet>
       </main>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <div className="footer__contact">
+          <p className="footer__mobile">073-11 222 33</p>
+          <p className="footer__address">Skånegatan 58, Stockholm</p>
+        </div>
+        <div className="footer__social">
+          <a href="https://www.instagram.com/">Instagram</a>
+          <a href="https://www.facebook.com/">Facebook</a>
+        </div>
+      </footer>
     </>
   );
 };
