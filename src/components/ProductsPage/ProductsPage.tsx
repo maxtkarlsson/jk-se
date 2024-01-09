@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProductList } from "./ProductList";
 import { useFetchProductsQuery, IProductsQuery } from "./products-api-slice";
 import "./products-page.scss";
+import { Spinner } from "../Common/Spinner";
 
 export const ProductsPage = () => {
   const [limit, setLimit] = useState(0);
@@ -12,11 +13,8 @@ export const ProductsPage = () => {
     offset: offset,
   };
 
-  const {
-    data = { products: [], meta: {} },
-    isFetching,
-    status,
-  } = useFetchProductsQuery(query);
+  const { data = { products: [], meta: {} }, status } =
+    useFetchProductsQuery(query);
 
   return (
     <>
@@ -46,11 +44,10 @@ export const ProductsPage = () => {
           <option value="4">4</option>
         </select>
       </div>
-      {status === "pending" && <p>LOADING</p>}
+      {status === "pending" && <Spinner />}
       {status === "fulfilled" && (
         <>
           <div>Number of products fetched: {data.products.length}</div>
-          <div>isFetching: {JSON.stringify(isFetching)}</div>
           <div className="products-page">
             <div className="products-page__list">
               <ProductList productList={data.products} />

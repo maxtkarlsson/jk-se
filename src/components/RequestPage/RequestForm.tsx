@@ -5,6 +5,7 @@ import "./request-form.scss";
 import { useFetchProductByIdQuery } from "../ProductsPage/products-api-slice";
 import { Button } from "../Common/Button";
 import { ButtonType } from "../../models/ButtonType";
+import { Spinner } from "../Common/Spinner";
 
 export const RequestForm = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export const RequestForm = () => {
   const {
     data: product,
     //isError,
-    //isLoading,
+    status,
   } = useFetchProductByIdQuery(id) || {};
 
   const [inputs, setInputs] = useState({
@@ -56,80 +57,83 @@ export const RequestForm = () => {
   };
   return (
     <>
-      <form className="request-form" onSubmit={handleSubmit}>
-        <div className="product">
-          <div className="wrapper">
-            <img
-              className="product__image"
-              src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
-              alt=""
-            />
-            <span className="product__name">{product?.name}</span>
+      {status === "pending" && <Spinner />}
+      {status === "fulfilled" && (
+        <form className="request-form" onSubmit={handleSubmit}>
+          <div className="product">
+            <div className="wrapper">
+              <img
+                className="product__image"
+                src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
+                alt=""
+              />
+              <span className="product__name">{product?.name}</span>
+            </div>
+            <span className="product__price">{product?.price} Sek</span>
           </div>
-          <span className="product__price">{product?.price} Sek</span>
-        </div>
-        <div className="selections">
-          <div className="radio-buttons">
-            <label>
-              <input
-                className="radio-buttons__input"
-                type="radio"
-                name="requestType"
-                value="question"
-                onChange={handleChange}
-                required={true}
-              />
-              Question
-            </label>
-            <label>
-              <input
-                className="radio-buttons__input"
-                type="radio"
-                name="requestType"
-                value="order"
-                onChange={handleChange}
-                required={true}
-              />
-              Order
-            </label>
+          <div className="selections">
+            <div className="radio-buttons">
+              <label>
+                <input
+                  className="radio-buttons__input"
+                  type="radio"
+                  name="requestType"
+                  value="question"
+                  onChange={handleChange}
+                  required={true}
+                />
+                Question
+              </label>
+              <label>
+                <input
+                  className="radio-buttons__input"
+                  type="radio"
+                  name="requestType"
+                  value="order"
+                  onChange={handleChange}
+                  required={true}
+                />
+                Order
+              </label>
+            </div>
+
+            <div className="text-inputs">
+              <label>
+                Email:{" "}
+                <input
+                  type="email"
+                  name="email"
+                  value={inputs.email}
+                  onChange={handleChange}
+                  required={true}
+                />
+              </label>
+              <label>
+                Phone number:{" "}
+                <input
+                  type="tel"
+                  name="phone"
+                  value={inputs.phone}
+                  onChange={handleChange}
+                  required={true}
+                />
+              </label>
+              <label>
+                Text:{" "}
+                <input
+                  type="text"
+                  name="text"
+                  value={inputs.text}
+                  onChange={handleChange}
+                  required={true}
+                />
+              </label>
+            </div>
           </div>
 
-          <div className="text-inputs">
-            <label>
-              Email:{" "}
-              <input
-                type="email"
-                name="email"
-                value={inputs.email}
-                onChange={handleChange}
-                required={true}
-              />
-            </label>
-            <label>
-              Phone number:{" "}
-              <input
-                type="tel"
-                name="phone"
-                value={inputs.phone}
-                onChange={handleChange}
-                required={true}
-              />
-            </label>
-            <label>
-              Text:{" "}
-              <input
-                type="text"
-                name="text"
-                value={inputs.text}
-                onChange={handleChange}
-                required={true}
-              />
-            </label>
-          </div>
-        </div>
-
-        <Button text="Send" btnType={ButtonType.PRIMARY} type="submit" />
-      </form>
+          <Button text="Send" btnType={ButtonType.PRIMARY} type="submit" />
+        </form>
+      )}
     </>
   );
 };
