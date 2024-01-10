@@ -3,11 +3,55 @@
 .products-page {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      svg {
+        path {
+          fill: b.$jkGrey;
+        }
+      }
+    }
+  }
+
+  &__button {
+    &--back {
+      transform: rotate(180deg);
+    }
+  }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 464px));
     gap: 12px;
     justify-content: center;
+  }
+
+  .sr-only {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
   }
 }

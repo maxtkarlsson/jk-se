@@ -8,18 +8,19 @@ const BASE_URL =
 export interface IResponseObject {
   products: IProduct[];
   meta: {
+    status: string;
     total: number;
-    limit: number;
-    offset: number;
     count: number;
+    page: number;
+    pages: number;
   };
 }
 
+/*
 export interface IProductsQuery {
-  limit: number;
-  offset: number;
+  page: number;
 }
-
+*/
 export const productsApiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
@@ -27,9 +28,9 @@ export const productsApiSlice = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchProducts: builder.query<IResponseObject, IProductsQuery>({
-        query: ({ limit = 0, offset = 0 }) => {
-          return `/products?offset=${offset}&limit=${limit}`;
+      fetchProducts: builder.query<IResponseObject, number | void>({
+        query: (page = 1) => {
+          return `/products?page=${page}`;
         },
       }),
       fetchProductById: builder.query<IProduct, string | undefined>({
