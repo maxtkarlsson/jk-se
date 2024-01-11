@@ -37,8 +37,6 @@ export const wishlistSlice = createSlice({
     },
 
     removeFromWishlist: (state, action: PayloadAction<IProduct>) => {
-      console.log("removeFromWishlist run with payload: ", action.payload);
-
       const productId = action.payload._id;
 
       const productIndex = state.wishlistItems.findIndex(

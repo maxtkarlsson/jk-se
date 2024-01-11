@@ -34,8 +34,6 @@ export const RequestForm = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    console.log(inputs);
-
     if (!id) {
       alert("Something went wrong");
     } else {
