@@ -31,6 +31,12 @@ export const RequestForm = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const handleChangeTextArea = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -44,15 +50,15 @@ export const RequestForm = () => {
         phoneNr: inputs.phone,
         text: inputs.text,
       });
+      setInputs({
+        email: "",
+        phone: "",
+        text: "",
+        requestType: "",
+      });
     }
-
-    setInputs({
-      email: "",
-      phone: "",
-      text: "",
-      requestType: "",
-    });
   };
+
   return (
     <>
       {status === "pending" && <Spinner />}
@@ -118,11 +124,10 @@ export const RequestForm = () => {
               </label>
               <label>
                 Text:{" "}
-                <input
-                  type="text"
+                <textarea
                   name="text"
                   value={inputs.text}
-                  onChange={handleChange}
+                  onChange={handleChangeTextArea}
                   required={true}
                 />
               </label>
