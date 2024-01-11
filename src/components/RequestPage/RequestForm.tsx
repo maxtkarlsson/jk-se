@@ -58,18 +58,18 @@ export const RequestForm = () => {
   return (
     <>
       {status === "pending" && <Spinner />}
-      {status === "fulfilled" && (
+      {product && (
         <form className="request-form" onSubmit={handleSubmit}>
           <div className="product">
             <div className="wrapper">
               <img
                 className="product__image"
-                src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
-                alt=""
+                src={`${product.imageUrls.productImages.small[0]}`}
+                alt={`Image of the product ${product.name}`}
               />
-              <span className="product__name">{product?.name}</span>
+              <span className="product__name">{product.name}</span>
             </div>
-            <span className="product__price">{product?.price} Sek</span>
+            <span className="product__price">{product.price} Sek</span>
           </div>
           <div className="selections">
             <div className="radio-buttons">

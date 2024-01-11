@@ -20,8 +20,8 @@ export const ProductDetails = ({ product }: IProductDetailsProps) => {
       <div className="product-details-card">
         <img
           className="product-details-card__img"
-          src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/1000x667/jennyprodukt26maj2016nr171-1000x667.webp"
-          alt=""
+          src={`${product.imageUrls.productImages.large[0]}`}
+          alt={`Image of the product ${product.name}`}
         />
         <div className="product-details-card__info">
           <h2 className="product-details-card__title">{product.name}</h2>

@@ -11,7 +11,7 @@ interface IWishListItemProps {
 }
 
 export const WishListItem = ({ item }: IWishListItemProps) => {
-  const { _id, name, price } = item;
+  const { _id, name, price, imageUrls } = item;
 
   const dispatch = useAppDispatch();
 
@@ -25,8 +25,8 @@ export const WishListItem = ({ item }: IWishListItemProps) => {
         <Link className="product-link" to={`/products/${_id}`}>
           <div className="wishlist-item__content">
             <img
-              src="https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/productImages/100x67/jennyprodukt26maj2016nr171-100x67.webp"
-              alt=""
+              src={`${imageUrls.productImages.small[0]}`}
+              alt={`Image of the product ${name}`}
             />
             <div className="wishlist-item__text">
               <h2 className="wishlist-item__title">{name}</h2>

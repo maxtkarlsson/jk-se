@@ -16,6 +16,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <img
             className="product-card__img"
             src={`${imageUrls.productImages.medium[0]}`}
+            alt={`Image of the product ${name}`}
           />
           <div className="product-card__content">
             <h2 className="product-card__title">{name}</h2>
