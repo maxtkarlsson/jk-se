@@ -19,6 +19,11 @@
   &__content {
     margin-top: 10px;
     margin-bottom: 5px;
+    padding-left: 12px;
+
+    @include b.for-size(medium) {
+      padding-left: 0px;
+    }
   }
 
   &__title {
