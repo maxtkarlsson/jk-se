@@ -21,11 +21,6 @@ export const Navigation = () => {
             </NavLink>
           </li>
           <li className="navigation-list__item">
-            <NavLink className="link" to="/news">
-              News
-            </NavLink>
-          </li>
-          <li className="navigation-list__item">
             <NavLink className="link" to="/about">
               About me
             </NavLink>
