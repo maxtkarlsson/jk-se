@@ -32,6 +32,7 @@
     appearance: none;
     outline: none;
     pointer-events: none;
+    border-radius: 0%;
     &:checked {
       opacity: 0;
       width: 0;
