@@ -40,6 +40,10 @@ My goal was to create a visually appealing website where users can browse produc
 
 - ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
+#### Testing
+
+- ![Cypress](https://img.shields.io/badge/Cypress-69D3A7.svg?style=for-the-badge&logo=Cypress&logoColor=white)
+
 ## Backend
 
 The backend for this project can be found in this repository:
@@ -80,6 +84,10 @@ In your browser, navigate to:
 ```
 http://localhost:5173/
 ```
+
+## Testing
+
+To look at my testing, switch to branch "Testing-with-cypress"
 
 ## Commits
 
