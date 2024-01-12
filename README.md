@@ -1,30 +1,90 @@
-# React + TypeScript + Vite
+# jennykåberg.se - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+I am studying Front End Developer at Medieinstitutet in Stockholm, Sweden. This project is my exam assignment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+My sister is a silversmith and metalworker and has her own workshop. She produces unique creations that are exclusively handmade. I wanted to make a website where she can display her products in a way that justifies their beauty and at the same time makes it easy for customers to place orders or reach out with questions.
 
-## Expanding the ESLint configuration
+The users are able to navigate through all pages and save products to their wishlist, place orders and ask questions about the products.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+My goal was to create a visually appealing website where users can browse products and place requests that will be sent from the backend to an email address. These requests will also be stored in a database.
 
-- Configure the top-level `parserOptions` property like this:
+## Screenshots
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+![Home](https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/screenshots/Home.webp)
+![Products](https://raw.githubusercontent.com/maxtkarlsson/jk-se/main/public/screenshots/Products.webp)
+
+## Tech-stack
+
+#### Frontend
+
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+
+#### Backend
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000.svg?style=for-the-badge&logo=Mongoose&logoColor=white)
+Cors
+SendGrid mail
+
+#### Database
+
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+
+## Backend
+
+The backend for this project can be found in this repository:
+https://github.com/maxtkarlsson/jk-se-backend
+
+## Deployment
+
+The deployment on Vercel can be found here:
+https://jk-se.vercel.app/
+
+## Project setup
+
+To install all dependencies, run:
+
+```
+npm i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Setup and run the backend project:
+https://github.com/maxtkarlsson/jk-se-backend
+
+Create an .env file and add the following:
+
+```
+VITE_REACT_LOCAL_API_URL = http://localhost:4000/api/v1/
+```
+
+## Run project
+
+To start the project, run:
+
+```
+npm run dev
+```
+
+In your browser, navigate to:
+
+```
+http://localhost:5173/
+```
+
+## Commits
+
+(fix): - Fix bugs.
+(feat): - Add new feature.
+(refactor): - Refactor, change or remove functions or variables.
+(build): - Change file structure or install new packages.
+(docs): - Update documentation.
