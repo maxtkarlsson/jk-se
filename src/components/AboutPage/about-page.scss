@@ -1,12 +1,7 @@
 @use "../../style/base" as b;
 
 .about-page {
-  div {
-    background-color: grey;
-    width: 600px;
-    height: 400px;
-  }
-
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 26px;
